@@ -23,11 +23,15 @@ var User = function (_React$Component) {
       return React.createElement(
         'div',
         { className: 'container' },
-        React.createElement('img', { src: this.props.user.avatar_url, style: { maxWidth: '100px' } }),
         React.createElement(
-          'a',
-          { href: this.props.user.html_url, target: '_blank' },
-          this.props.user.login
+          'div',
+          { className: 'item' },
+          React.createElement('img', { src: this.props.user.avatar_url, style: { maxWidth: '100px' } }),
+          React.createElement(
+            'a',
+            { href: this.props.user.html_url, target: '_blank' },
+            this.props.user.login
+          )
         )
       );
     }
@@ -109,19 +113,16 @@ var App = function (_React$Component3) {
       return React.createElement(
         'div',
         null,
+        React.createElement('i', { className: 'fa fa-github' }),
         React.createElement(
           'form',
           { onSubmit: function onSubmit(event) {
               return _this5.onSubmit(event);
             } },
-          React.createElement(
-            'label',
-            { htmlFor: 'searchText' },
-            'Search by user name'
-          ),
           React.createElement('input', {
             type: 'text',
             id: 'searchText',
+            placeholder: 'search by user name',
             onChange: function onChange(event) {
               return _this5.onChangeHandle(event);
             },
